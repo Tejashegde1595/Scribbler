@@ -1,0 +1,80 @@
+body{
+    background-color: #ffeedd;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    width: 48%;
+    margin: 10px;
+    transition: box-shadow .3s;
+}
+
+
+.card:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+.postCard{
+    border-radius: 25px;
+}
+.card-header p{
+    margin-top: 70%;
+}
+.card-title{
+    color: grey;
+    font-weight: bold;
+}
+.card-header{
+    width: max-content;
+    color: black;
+    background-color: white;
+    font-weight: bolder;
+
+}
+
+.card-body{
+    background-color: lightgray;
+}
+
+.card-body{
+    width: 100%;
+}
+
+
+.row{
+    display: inline-flex;
+    margin-top: 20%;
+}
+.card-text{
+    height:60px;
+    line-height:20px; /* Height / no. of lines to display */
+    overflow:hidden;
+}
+
+.trash{
+    float: right;
+    cursor: pointer;
+}
+
+.footer-elipsis{
+    float: right;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
+.modal{
+    display: flex;
+    height: max-content;
+    width: max-content;
+    margin-top: 20%;
+}
+
