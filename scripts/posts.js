@@ -2,12 +2,21 @@ var editBtn = document.getElementById('editButton');
 var editables = document.querySelectorAll('#postTitle, #postBody');
 var count = 1;
 
+/*
+function which implements the like Functionality
+*/
+
 function likeFunction(likeButton) {
 
   document.getElementById(likeButton).innerHTML = 'Liked';
   const updatedCount = count++;
   document.getElementById('likeText').innerHTML = updatedCount + ' person likes this!';
 }
+
+
+/*
+function which implements the show comments Functionality
+*/
 
 function showComments(textArea) {
   var text = document.getElementById(textArea);
@@ -33,7 +42,7 @@ function retrievePost() {
 }
 
 
-
+//adding event listener to the Edit Post Button
 editBtn.addEventListener('click', function () {
   if (!editables[0].isContentEditable) {
     editables[0].contentEditable = 'true';
