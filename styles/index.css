@@ -1,0 +1,91 @@
+body{
+    background: url("../images/background.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.topHeaders{
+    float: left;
+}
+
+.topHeaderBtn{
+    float: right;
+    margin: 15px;
+}
+
+
+.scrHead{
+    color: cornflowerblue;
+    font-size: x-large;
+    margin: 10px;
+    font-family: 'Montez', cursive; 
+}
+
+.scrSubHead{
+    font-size: medium;
+    margin: 10px;
+    font-family: 'Ubuntu Mono';
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    margin-left: 30%;
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:10%;
+    width: fit-content;
+    padding: 30px;
+    align-items: center;
+}
+
+.signUser{
+    width: 50vh;
+}
+
+.postContent{
+    width: fit-content;
+}
+.modal-content button{
+    margin-top: 10px;
+    width: initial;
+    align-self: center;
+    align-items: center;
+}
+
+.modal-content p{
+    font-family: 'Ubuntu Mono';
+    color: dimgray;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.close{
+    font-weight: bold;
+    font-size: large;
+}
+
+.memberOpt{
+    margin-top: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.postBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.postBtn button{
+    margin: 5px;
+    color: black;
+}

@@ -1,0 +1,68 @@
+.topHeaders{
+    float: left;
+}
+
+.topHeaderBtn{
+    float: right;
+    margin: 15px;
+}
+
+
+.scrHead{
+    color: cornflowerblue;
+    font-size: x-large;
+    margin: 10px;
+    font-family: 'Montez', cursive; 
+}
+
+.scrSubHead{
+    font-size: medium;
+    margin: 10px;
+    font-family: 'Ubuntu Mono';
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    margin-left: 30%;
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:10%;
+    width: fit-content;
+    padding: 30px;
+    align-items: center;
+}
+
+.signUser{
+    width: 50vh;
+}
+
+.modal-content button{
+    margin-top: 10px;
+    width: initial;
+    align-self: center;
+    align-items: center;
+}
+
+.modal-content p{
+    font-family: 'Ubuntu Mono';
+    color: dimgray;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.close{
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+}
+
+.memberOpt{
+    margin-top: 5px;
+    text-align: center;
+    cursor: pointer;
+}

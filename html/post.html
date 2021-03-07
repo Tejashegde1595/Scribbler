@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/styles/posts.css" rel="stylesheet">
+    <link href="/styles/common.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <header>
+            <div class="topHeaders">
+                <p class="scrHead">ScriBBler</p>
+                <p class="scrSubHead">Explore, Imagine, Create</p>
+            </div>
+            <button class="topHeaderBtn btn btn-primary" onclick="signUp()">Sign Up</button>
+            <button class="topHeaderBtn btn btn-primary" onclick="signIn()">Sign In</button>
+        </header>
+        <div id="signUpModal" class="modal" style="display: none;">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <form class="signUser"> 
+                    <p>Get Started<span class="close" onclick="closeSignUp()">&times;</span></p>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" placeholder="Enter your name" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input class="form-control" type="text" placeholder="Enter your username" id="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" placeholder="Enter your password" id="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmpassword">Confirm Password</label>
+                        <input class="form-control" placeholder="Re-enter your password" id="confirmpassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign Up</button>
+            </form> 
+            </div> 
+        
+        </div>
+        <div id="signInModal" class="modal"  style="display: none;">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <form class="signUser">
+                    <p>Welcome Back!<span class="close" onclick="closeSignIn()">&times;</span></p>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input class="form-control" type="text" placeholder="Enter your username" id="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" placeholder="Enter your password" id="password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Sign In</button>
+                    <p class="memberOpt">Not a member?<a onclick="toggleSignUp()">Sign Up</a></p>
+                </form>
+            </div>
+        
+        </div>
+    </div>
+    <br> <br> <br>
+
+	<form>
+		<div class="text-center commonBorder">
+			<h3 id="postTitle"></h3>
+		</div>
+
+		<div class="commonBorder commonFont" id="author"></div>
+		<div>
+            <button class="editButton commonBorder" id="editButton" type="button"></button>
+		</div>
+
+
+		<br><br>
+		<div class="commonBorder commonFont">
+			<p id="postBody"></p>
+		</div>
+
+		<br><br>
+
+
+		<div><button type="button" class="likeButton commonBorder" id="likeButton"
+				onclick="likeFunction('likeButton')"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</button>
+		</div>
+		<p><br /></p>
+		<p class="commonBorder commonFont" id="likeText">Be the first one to like this! </p>
+
+
+		<div class="form-group commonBorder">
+			<label for="textArea"></label>
+			<textarea class="form-control" id="textArea" rows="2" placeholder="Leave a comment..."></textarea>
+		</div>
+
+		<div><button type="button" class="commentButton commonBorder" id="commentButton"
+				onclick="showComments('textArea', '')">Comment</button><br /></div>
+		<br><br>
+		<div class="commonBorder">
+			<p>
+			<h6>All Comments</h6>
+			</p>
+		</div>
+		<div id="outline" class="commonBorder commonFont">
+			<p id="commentText"></p>
+		</div>
+	</form>
+
+
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/posts.js"></script>
+</body>
+</html>

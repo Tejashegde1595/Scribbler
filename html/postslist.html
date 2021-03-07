@@ -2,8 +2,15 @@
 <html>
 
 <head>
-    <!-- TODO: Include Font Awesome file here -->
-    <!-- TODO: Include Google Fonts file here -->
+    <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/styles/postslist.css" rel="stylesheet">
+    <link href="/styles/common.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -12,110 +19,192 @@
     <!-- ATTENTION: The HTML code for the list of posts has been given to you. You can feel free to add/delete/modify this code. You need to write the proper CSS and JavaScript code corresponding to this page so that the result looks like the screenshots given to you in the Project Statement. -->
 
     <!-- list of all posts starts here -->
-    <div>
+    <div class="header">
+        <header>
+            <div class="topHeaders">
+                <p class="scrHead">ScriBBler</p>
+                <p class="scrSubHead">Explore, Imagine, Create</p>
+            </div>
+            <button class="topHeaderBtn btn btn-primary" onclick="signUp()">Sign Up</button>
+            <button class="topHeaderBtn btn btn-primary" onclick="signIn()">Sign In</button>
+        </header>
+        <div id="signUpModal" class="modal" style="display: none;">
 
+            <!-- Modal content -->
+            <div class="modal-content">
+            <form class="signUser"> 
+                    <p>Get Started<span class="close" onclick="closeSignUp()">&times;</span></p>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" placeholder="Enter your name" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input class="form-control" type="text" placeholder="Enter your username" id="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" placeholder="Enter your password" id="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmpassword">Confirm Password</label>
+                        <input class="form-control" placeholder="Re-enter your password" id="confirmpassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign Up</button>
+            </form> 
+            </div> 
+        
+        </div>
+        <div id="signInModal" class="modal"  style="display: none;">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <form class="signUser">
+                    <p>Welcome Back!<span class="close" onclick="closeSignIn()">&times;</span></p>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input class="form-control" type="text" placeholder="Enter your username" id="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" placeholder="Enter your password" id="password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Sign In</button>
+                    <p class="memberOpt">Not a member?<a onclick="toggleSignUp()">Sign Up</a></p>
+                </form>
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="container">
+      <div class="row"> 
         <!-- post 1 starts here -->
-        <div>
-            <div>
-                <p>Srishti Gupta</p>
+
+        <div class="card postCard" id="post1">
+            <div class="card-header" style="border-radius: 25px;">
+                <p id="author1">Srishti Gupta</p>
             </div>
 
-            <div>
-                <div>
-                    <p>‘let’ me be a ‘const’(ant), not a ‘var’(iable)!</p>
-                    <span>
-                        <!-- TODO: Include Font Awesome icon for delete icon here -->
-                    </span>
+            <div class="card-body" style="border-radius: 0 25px 25px 0px;" >
+                <div class="card-title" id="cardTitle1">
+                    <p>
+                        <span>
+                            <i class="fa fa-trash fa-align-right trash" style="cursor: pointer;" aria-hidden="true" onclick="showModal('post1')"></i>
+                        </span>
+                        ‘let’ me be a ‘const’(ant), not a ‘var’(iable)!
+                    </p>
                 </div>
-                <p>Since JavaScript does not have any type-checking, either of these keywords can be used to declare a variable of any type (datatype) in JavaScript. Though all the three keywords are used for the same purpose, they are different.</p>
-                <span>
-                    <!-- TODO: Include Font Awesome icon for horizontal ellipsis icon here -->
+                <p class="card-text" id="cardBody1">Since JavaScript does not have any type-checking, either of these keywords can be used to declare a variable of any type (datatype) in JavaScript. Though all the three keywords are used for the same purpose, they are different.</p>
+                <span class="footer-elipsis">
+                    <i class="fa fa-ellipsis-h fa-align-right"
+                    onclick="setValues('author1','cardTitle1','cardBody1')"></i>
                 </span>
             </div>
         </div>
-        <!-- post 1 ends here -->
+         <!-- post 1 ends here -->
 
         <!-- post 2 starts here -->
-        <div>
-            <div>
-                <p>Colby Fayock</p>
+        <div class="card postCard" id="post2">
+            <div class="card-header" style="border-radius: 25px;">
+                <p id="author2">Colby Fayock</p>
             </div>
 
-            <div>
-                <div>
-                    <p>What is linting and how can it save you time?</p>
-                    <span>
-                        <!-- TODO: Include Font Awesome icon for delete icon here -->
-                    </span>
+            <div class="card-body" style="border-radius: 0 25px 25px 0px;">
+                <div  class="card-title" id="cardTitle2">
+                    <p>
+                        <span>
+                            <i class="fa fa-trash fa-align-right trash" aria-hidden="true" onclick="showModal('post2')"></i>
+                        </span>
+                        What is linting and how can it save you time?
+                   </p>
                 </div>
-                <p>One of the biggest challenges in software development is time. It’s something we can’t easily get more of, but linting can help us make the most out of the time we have.</p>
-                <span>
-                    <!-- TODO: Include Font Awesome icon for horizontal ellipsis icon here -->
+                <p class="card-text" id="cardBody2">One of the biggest challenges in software development is time. It’s something we can’t easily get more of, but linting can help us make the most out of the time we have.</p>
+                <span class="footer-elipsis">
+                    <i class="fa fa-ellipsis-h fa-align-right"
+                    onclick="setValues('author2','cardTitle2','cardBody2')"></i>
                 </span>
             </div>
         </div>
+
+    <!-- </div> -->
         <!-- post 2 ends here -->
 
         <!-- post 3 starts here -->
-        <div>
-            <div>
-                <p>Yazeed Bzadough</p>
+        <div class="card postCard" id="post3">
+            <div class="card-header" style="border-radius: 25px;">
+                <p id="author3">Yazeed Bzadough</p>
             </div>
 
-            <div>
-                <div>
-                    <p>How to Get More Views on Your Tech Blog</p>
-                    <span>
-                        <!-- TODO: Include Font Awesome icon for delete icon here -->
-                    </span>
+            <div class="card-body" style="border-radius: 0 25px 25px 0px;">
+                <div class="card-title" id="cardTitle3">
+                    <p>
+                        <span>
+                            <i class="fa fa-trash fa-align-right trash" aria-hidden="true" onclick="showModal('post3')"></i>
+                        </span>
+                        How to Get More Views on Your Tech Blog
+                    </p>
                 </div>
-                <p>If you're a developer with a Twitter account, you've already seen everyone and their cat start a blog, YouTube channel, or Patreon. We all want to become stars, or at the very least, a recognizable name in the industry.</p>
-                <span>
-                    <!-- TODO: Include Font Awesome icon for horizontal ellipsis icon here -->
+                <p class="card-text" id="cardBody3">If you're a developer with a Twitter account, you've already seen everyone and their cat start a blog, YouTube channel, or Patreon. We all want to become stars, or at the very least, a recognizable name in the industry.</p>
+                <span class="footer-elipsis">
+                    <i class="fa fa-ellipsis-h fa-align-right"
+                    onclick="setValues('author3','cardTitle3','cardBody3')"></i>
                 </span>
             </div>
         </div>
         <!-- post 3 ends here -->
 
         <!-- post 4 starts here -->
-        <div>
-            <div>
-                <p>Cedd Burge</p>
+        <div class="card postCard" id="post4">
+            <div class="card-header" style="border-radius: 25px;">
+                <p id="author4">Cedd Burge</p>
             </div>
 
-            <div>
-                <div>
-                    <p>How to write easily describable code</p>
-                    <span>
-                        <!-- TODO: Include Font Awesome icon for delete icon here -->
-                    </span>
+            <div class="card-body" style="border-radius: 0 25px 25px 0px;">
+                <div class="card-title"  id="cardTitle4">
+                    <p>
+                        <span>
+                            <i class="fa fa-trash fa-align-right trash" aria-hidden="true" onclick="showModal('post4')"></i>
+                        </span>
+                        How to write easily describable code
+                    </p>
                 </div>
-                <p>When code is not describable using words, most people have to do some mental mapping to turn it in to words. This wastes mental energy, and you run the risk of getting the mapping wrong. Different people will map to different words, which
+                <p class="card-text" id="cardBody4">When code is not describable using words, most people have to do some mental mapping to turn it in to words. This wastes mental energy, and you run the risk of getting the mapping wrong. Different people will map to different words, which
                     leads to confusion when discussing the code.</p>
-                <span>
-                    <!-- TODO: Include Font Awesome icon for horizontal ellipsis icon here -->
+                <span class="footer-elipsis">
+                    <i class="fa fa-ellipsis-h fa-align-right"
+                    onclick="setValues('author4','cardTitle4','cardBody4')"></i>
                 </span>
             </div>
         </div>
         <!-- post 4 ends here -->
 
         <!-- post 5 starts here -->
-        <div>
-            <div>
-                <p>Srishti Gupta</p>
+        <div class="card postCard" id="post5"> 
+            <div class="card-header" style="border-radius: 25px;">
+                <p id="author5">Srishti Gupta</p>
             </div>
 
-            <div>
-                <div>
-                    <p>Everything you should know about ‘module’ & ‘require’ in Node.js</p>
-                    <span>
-                        <!-- TODO: Include Font Awesome icon for delete icon here -->
-                    </span>
+            <div class="card-body" style="border-radius: 0 25px 25px 0px;">
+                <div class="card-title" id="cardTitle5">
+                    <p class="card-text">
+                        <span>
+                            <i class="fa fa-trash fa-align-right trash" 
+                            onclick="showModal('post5')"></i>
+                        </span>
+                        Everything you should know about ‘module’ & ‘require’ in Node.js
+                   </p>
                 </div>
-                <p>Node.js treats each JavaScript file as a separate module. For instance, if you have a file containing some code and this file is named xyz.js, then this file is treated as a module in Node, and you can say that you’ve created a module
+                <p class="card-text" id="cardBody5">Node.js treats each JavaScript file as a separate module. For instance, if you have a file containing some code and this file is named xyz.js, then this file is treated as a module in Node, and you can say that you’ve created a module
                     named xyz.</p>
-                <span>
-                    <!-- TODO: Include Font Awesome icon for horizontal ellipsis icon here -->
+                <span class="footer-elipsis">
+                    <i class="fa fa-ellipsis-h fa-align-right"
+                    onclick="setValues('author5','cardTitle5','cardBody5')"></i>
                 </span>
             </div>
         </div>
@@ -125,6 +214,27 @@
 
     </div>
     <!-- list of all posts ends here -->
+
+    </div>
+
+    <div class="container hide" id ='deleteModal'>
+        <div class="modal deleteModal">
+        <div class="modal-content">
+            <p>Are you Sure You want to delete the post?</p>
+            <div>
+                <button class="btn btn-success" onclick="deletePost()">Yes</button>
+                <button class="btn btn-danger" onclick="hideModal()">No</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+   
+    </div>
+
+
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/postslist.js"></script>
 </body>
 
 </html>
