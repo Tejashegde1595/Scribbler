@@ -71,7 +71,7 @@ body{
     display: flex;
 }
 
-.modal{
+.deleteModal{
     display: flex;
     height: max-content;
     width: max-content;
