@@ -2,12 +2,99 @@
 <html>
 
 <head>
-    <!-- TODO: Include Font Awesome file here -->
-    <!-- TODO: Include Google Fonts file here -->
+    <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+    <link href="/styles/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-    <!-- TODO: Include all your code for the header and home page here -->
-</body>
+    <header>
+        <div class="topHeaders">
+            <p class="scrHead">ScriBBler</p>
+            <p class="scrSubHead">Explore, Imagine, Create</p>
+        </div>
+        <button class="topHeaderBtn btn btn-primary" onclick="signUp()">Sign Up</button>
+        <button class="topHeaderBtn btn btn-primary" onclick="signIn()">Sign In</button>
+    </header>
+    <div id="signUpModal" class="modal">
 
+        <!-- Modal content -->
+        <div class="modal-content">
+         <form class="signUser"> 
+                <p>Get Started<span class="close" onclick="closeSignUp()">&times;</span></p>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" placeholder="Enter your name" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" placeholder="Enter your username" id="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" placeholder="Enter your password" id="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmpassword">Confirm Password</label>
+                    <input class="form-control" placeholder="Re-enter your password" id="confirmpassword" required>
+                </div>
+                <button type="submit" class="btn btn-success">Sign Up</button>
+          </form> 
+        </div> 
+      
+      </div>
+      <div id="signInModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <form class="signUser">
+                <p>Welcome Back!<span class="close" onclick="closeSignIn()">&times;</span></p>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" placeholder="Enter your username" id="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" placeholder="Enter your password" id="password" required>
+                </div>
+
+                <button type="submit" class="btn btn-success">Sign In</button>
+                <p class="memberOpt">Not a member?<a onclick="toggleSignUp()">Sign Up</a></p>
+            </form>
+        </div>
+      
+      </div>
+      <div class="postBtn">
+        <button class="btn btn-warning" onclick="allPosts()">All Posts</button>
+        <button class="btn btn-warning" onclick="createPost()">Create Post</button>
+      </div>
+      <div id="postModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <form class="postContent">
+                <p>Pen Your Post<span class="close" onclick="closePost()">&times;</span></p>
+                <div class="form-group">
+                    <label for="postTitle">Title</label>
+                    <input class="form-control" type="text" placeholder="Enter title of your post" id="postTitle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contents</label>
+                    <br>
+                    <textarea placeholder="Enter the contents of your post" rows="10" cols="60"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success" style="margin-left: 43%;">Create</button>
+            </form>
+        </div>
+      
+      </div>
+      <script src="/scripts/index.js"></script>
+</body>
 </html>
